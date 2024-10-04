@@ -13,91 +13,76 @@
     <?php
     class Animal
     {
+        public $weight, $age, $color;
 
-        public $вес, $возраст, $окрас;
-
-        public function __construct($ves, $age, $color)
+        public function __construct($weight, $age, $color)
         {
-            $this->вес = $ves;
-            $this->возраст = $age;
-            $this->окрас = $color;
+            $this->weight = $weight;
+            $this->age = $age;
+            $this->color = $color;
         }
     }
 
     class Lion extends Animal
     {
-        public $кот;
+        public $family;
 
-        public function __construct($ves, $age, $color, $cat)
+        public function __construct($weight, $age, $color, $family)
         {
-            parent::__construct($ves, $age, $color);
-            $this->кот = $cat;
+            parent::__construct($weight, $age, $color);
+            $this->family = $family;
         }
 
         public function displayInfo()
         {
-            return "Максимальный вес львов составляет {$this->вес} кг, 
-       средний  возраст {$this->возраст} лет,
-         шерсть имеет {$this->окрас} цвет, 
-         а так же лев представляет семейство  {$this->кот} ";
+            return "Максимальный вес львов составляет {$this->weight} кг, средний возраст {$this->age} лет, шерсть имеет цвет {$this->color}, и они принадлежат семейству {$this->family}";
         }
-
     }
 
     $lion = new Lion(200, 10, 'рыжий', 'кошачих');
 
-
-
-    class Rubbit extends Animal
+    class Rabbit extends Animal
     {
-        public $еда;
+        public $food;
 
-        public function __construct($ves, $age, $color, $food)
+        public function __construct($weight, $age, $color, $food)
         {
-            parent::__construct($ves, $age, $color);
-            $this->еда = $food;
+            parent::__construct($weight, $age, $color);
+            $this->food = $food;
         }
 
         public function displayInfo()
         {
-            return "Максимальный вес кроликов составляет {$this->вес} кг, 
-       средний  возраст {$this->возраст} лет,
-         шерсть имеет {$this->окрас}, 
-         а так же кролики любят кушать  {$this->еда} ";
+            return "Максимальный вес кроликов составляет {$this->weight} кг, средний возраст {$this->age} лет, шерсть имеет цвет {$this->color}, и они любят кушать {$this->food}";
         }
-
     }
 
-
-    $rab = new Rubbit(50, 5, 'серый', 'морковь');
+    $rabbit = new Rabbit(50, 5, 'серый', 'морковь');
 
     class Wolf extends Animal
     {
-        public $луна;
+        public $likes;
 
-        public function __construct($ves, $age, $color, $moon)
+        public function __construct($weight, $age, $color, $likes)
         {
-            parent::__construct($ves, $age, $color);
-            $this->луна = $moon;
+            parent::__construct($weight, $age, $color);
+            $this->likes = $likes;
         }
 
         public function displayInfo()
         {
-            return "Максимальный вес волков составляет {$this->вес} кг, 
-       средний  возраст {$this->возраст} лет,
-         шерсть имеет {$this->окрас}, 
-            {$this->луна} - вот что особенно будоражит  волков  ";
+            return "Максимальный вес волков составляет {$this->weight} кг, средний возраст {$this->age} лет, шерсть имеет цвет {$this->color}, и они особенно любят {$this->likes}";
         }
-
     }
 
-    $w = new Wolf(70, 6, 'серый', 'луна');?>
+    $wolf = new Wolf(70, 6, 'серый', 'луну');
+    ?>
 
-
-    <div class="e">
+    <div class="animals">
         <p><?php echo $lion->displayInfo(); ?></p>
-        <p><?php echo $rab->displayInfo(); ?></p>
-        <p><?php echo $w->displayInfo(); ?></p>
+        <p><?php echo $rabbit->displayInfo(); ?></p>
+        <p><?php echo $wolf->displayInfo(); ?></p>
+    </div>
 
     </div>
 </body>
